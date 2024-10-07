@@ -3,7 +3,7 @@
 import React from "react";
 import logoUrl from "../assets/logo.svg";
 
-export default function HeadDefault() {
+export default function Head() {
   return (
     <>
       <link rel="icon" href={logoUrl} />
