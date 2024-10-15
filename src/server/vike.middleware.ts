@@ -4,7 +4,10 @@ import { renderPage } from 'vike/server';
 const app = new Hono();
 
 app.get('*', async (c, next) => {
-  const pageContextInit = { urlOriginal: c.req.url };
+  const pageContextInit = {
+    urlOriginal: c.req.url,
+    // Add any additional information about the request here ...
+  };
   const pageContext = await renderPage(pageContextInit);
   const { httpResponse } = pageContext;
   if (!httpResponse) {

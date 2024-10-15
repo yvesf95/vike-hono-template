@@ -1,24 +1,24 @@
-import "./style.css";
+import './style.css';
 
-import React from "react";
-import logoUrl from "../assets/logo.svg";
-import { Link } from "../components/link";
+// import logoUrl from '@/client/assets/logo.svg';
+import React from 'react';
+import { Link } from '../components/link';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
-        display: "flex",
+        display: 'flex',
         maxWidth: 900,
-        margin: "auto",
+        margin: 'auto',
       }}
     >
       <Sidebar>
         <Logo />
-        <Link href="/">Welcome</Link>
+        <Link href="/">Welcome 11</Link>
         <Link href="/todo">Todo</Link>
         <Link href="/star-wars">Data Fetching</Link>
-        {""}
+        {''}
       </Sidebar>
       <Content>{children}</Content>
     </div>
@@ -32,10 +32,10 @@ function Sidebar({ children }: { children: React.ReactNode }) {
       style={{
         padding: 20,
         flexShrink: 0,
-        display: "flex",
-        flexDirection: "column",
-        lineHeight: "1.8em",
-        borderRight: "2px solid #eee",
+        display: 'flex',
+        flexDirection: 'column',
+        lineHeight: '1.8em',
+        borderRight: '2px solid #eee',
       }}
     >
       {children}
@@ -51,7 +51,7 @@ function Content({ children }: { children: React.ReactNode }) {
         style={{
           padding: 20,
           paddingBottom: 50,
-          minHeight: "100vh",
+          minHeight: '100vh',
         }}
       >
         {children}
@@ -69,7 +69,8 @@ function Logo() {
       }}
     >
       <a href="/">
-        <img src={logoUrl} height={64} width={64} alt="logo" />
+        {/* <img src={logoUrl} height={64} width={64} alt="logo" /> */}
+        Logo
       </a>
     </div>
   );

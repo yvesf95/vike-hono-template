@@ -1,6 +1,6 @@
 // https://vike.dev/data
-import { todos } from "../../../server/database/todoItems";
-import type { PageContextServer } from "vike/types";
+import type { PageContextServer } from 'vike/types';
+import { todos } from '../../../server/database/todoItems';
 
 export type Data = {
   todo: { text: string }[];
