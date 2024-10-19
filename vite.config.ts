@@ -1,8 +1,14 @@
+// Vike
 import react from '@vitejs/plugin-react';
 import vike from 'vike/plugin';
-import { defineConfig } from 'vite';
 
-console.log('vite.config.ts', process.env.APP_PORT);
+// Vite
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const root = resolve(__dirname, '.');
 
 export default defineConfig({
   plugins: [
@@ -24,7 +30,20 @@ export default defineConfig({
   ],
   server: {
     port: 3002,
-    hmr: { port: 3002 },
-    watch: { ignored: ['**/src/server/**'] },
+    hmr: {
+      port: 3002,
+    },
+    watch: {
+      // So it doesn't send `type: full-reload` message on HMR socket when server files change.
+      ignored: ['**/src/server/**'],
+    },
+  },
+  preview: {
+    port: 3000,
+  },
+  resolve: {
+    alias: {
+      '@': resolve(root, 'src'),
+    },
   },
 });
